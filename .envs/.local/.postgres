@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=shop_thienhi
+POSTGRES_USER=EfBxNbHsEmJihHBlGqQLuvpPwtUCYMsM
+POSTGRES_PASSWORD=Qnf2rcBRFH5XavYK79hUxHT7aSbiVlz7mle2jRsL6aGQbdBhBnpfVnGjMNHJ67QW
