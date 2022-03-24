@@ -16,7 +16,7 @@ if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
     env.read_env(str(ROOT_DIR / ".env"))
 
-ALLOWED_HOSTS = ['172.19.0.1', '127.0.0.1', 'localhost', '0.0.0.0',]
+ALLOWED_HOSTS = ['172.19.0.1', '127.0.0.1', 'localhost', '0.0.0.0','stagging.herokuapp.com']
 
 # GENERAL
 # ------------------------------------------------------------------------------
