@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Product, Order, OrderDetails
+from ..models import Product, Order, OrderDetails, ProductStatistics
 
 class ProductSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True)
@@ -66,3 +66,8 @@ class UpdateOrderSerializer(serializers.Serializer):
 
     class Meta:
         fields = ['money_received']
+
+
+class ProductStatisticsSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'

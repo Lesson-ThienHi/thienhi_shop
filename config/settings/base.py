@@ -16,7 +16,7 @@ if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
     env.read_env(str(ROOT_DIR / ".env"))
 
-ALLOWED_HOSTS = ['172.19.0.1', '127.0.0.1', 'localhost', '0.0.0.0','stagging.herokuapp.com']
+ALLOWED_HOSTS = ['172.19.0.1', '127.0.0.1', 'localhost', '0.0.0.0','stagging.herokuapp.com', "55bb-42-119-252-18.ngrok.io"]
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -85,6 +85,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "shop_thienhi.users",
     "shop_thienhi.product",
+    "shop_thienhi.core",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

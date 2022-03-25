@@ -1,9 +1,10 @@
-from ..models import Product, Order, OrderDetails
-from .serializers import ProductSerializer, OrderDetailsSerializer, OrderSerializer, UpdateOrderSerializer
+from ..models import Product, Order, OrderDetails, ProductStatistics
+from .serializers import ProductSerializer, OrderDetailsSerializer, OrderSerializer, UpdateOrderSerializer, ProductStatisticsSerializer
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from datetime import datetime
+from shop_thienhi.core.redis_cache_product_statistics import get_cached_device_product_statistics
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -197,3 +198,13 @@ class OrderViewSet(viewsets.ModelViewSet):
     def statistic(self, request, *args, **kwargs):
         
         return Response({'success': False,'errors':'NOT_HAVE_ACCESS'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ProductStatisticsViewSet(viewsets.ModelViewSet):
+    queryset = ProductStatistics.objects.all()
+    serializer_class = ProductStatisticsSerializer
+    permission_classes = (permissions.IsAuthenticated, )
+
+    def list(self, request,*args, **kwargs):
+        data = get_cached_device_product_statistics()
+        return Response(data)

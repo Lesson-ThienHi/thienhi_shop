@@ -11,7 +11,7 @@ SECRET_KEY = env(
     default="hscxPdZu9uqJhvoUHFJjajUtZdcXRzvmnp9qBurrYPT1A2vXkktU9gKdTEMjFn6t",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", 'stagging.herokuapp.com']
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", 'stagging.herokuapp.com', '55bb-42-119-252-18.ngrok.io']
 
 # CACHES
 # ------------------------------------------------------------------------------
