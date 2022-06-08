@@ -36,22 +36,22 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
-  docs:
-    image: shop_thienhi_local_docs
-    container_name: shop_thienhi_local_docs
-    platform: linux/x86_64
-    build:
-      context: .
-      dockerfile: ./compose/local/docs/Dockerfile
-    env_file:
-      - ./.envs/.local/.django
-    volumes:
-      - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./shop_thienhi:/app/shop_thienhi:z
-    ports:
-      - "9000:9000"
-    command: /start-docs
+  # docs:
+  #   image: shop_thienhi_local_docs
+  #   container_name: shop_thienhi_local_docs
+  #   platform: linux/x86_64
+  #   build:
+  #     context: .
+  #     dockerfile: ./compose/local/docs/Dockerfile
+  #   env_file:
+  #     - ./.envs/.local/.django
+  #   volumes:
+  #     - ./docs:/docs:z
+  #     - ./config:/app/config:z
+  #     - ./shop_thienhi:/app/shop_thienhi:z
+  #   ports:
+  #     - "9000:9000"
+  #   command: /start-docs
 
   redis:
     image: redis:6
@@ -77,10 +77,10 @@ services:
     ports: []
     command: /start-celerybeat
 
-  flower:
-    <<: *django
-    image: shop_thienhi_local_flower
-    container_name: shop_thienhi_local_flower
-    ports:
-      - "5555:5555"
-    command: /start-flower
+  # flower:
+  #   <<: *django
+  #   image: shop_thienhi_local_flower
+  #   container_name: shop_thienhi_local_flower
+  #   ports:
+  #     - "5555:5555"
+  #   command: /start-flower
